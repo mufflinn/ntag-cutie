@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>You’ve Been Pranked</title>
+  <style>
+    body { text-align: center; margin-top: 50px; font-family: Arial; background: #222; color: white; }
+    button { padding: 20px; font-size: 24px; background: red; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>🎉 You’ve Been Tagged!</h1>
+  <p>Tap below to reveal the surprise</p>
+  <button onclick="playSound()">🔊 TAP ME</button>
+
+  <audio id="prankSound">
+    <source src="https://www.myinstants.com/media/sounds/troll-song.mp3" type="audio/mpeg">
+    Your browser doesn’t support the audio tag.
+  </audio>
+
+  <script>
+    function playSound() {
+      var sound = document.getElementById("prankSound");
+      sound.volume = 1.0;
+      sound.play();
+    }
+  </script>
+</body>
+</html>
