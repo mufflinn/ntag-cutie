@@ -1,28 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>You’ve Been Pranked</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { text-align: center; margin-top: 50px; font-family: Arial; background: #222; color: white; }
-    button { padding: 20px; font-size: 24px; background: red; color: white; border: none; cursor: pointer; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #ff3c3c;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:active {
+      transform: scale(0.95);
+      box-shadow: 0 0 10px #ff3c3c;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
   </style>
 </head>
 <body>
+
   <h1>🎉 You’ve Been Tagged!</h1>
-  <p>Tap below to reveal the surprise</p>
-  <button onclick="playSound()">🔊 TAP ME</button>
+  <p>Tap the red button to hear the surprise</p>
+
+  <button onclick="playSound()">🔊 TAP</button>
 
   <audio id="prankSound">
-    <source src="https://github.com/mufflinn/ntag-cutie/blob/10306aaf41e51ef261ed261ae4cc8b7bf84b9a38/moan%20earrape%20(mp3cut.net).mp3">
-    Your browser doesn’t support the audio tag.
+    <source src="https://github.com/mufflinn/ntag-cutie/raw/main/moan%20earrape%20(mp3cut.net).mp3">
+    Your browser doesn't support the audio tag.
   </audio>
 
   <script>
     function playSound() {
-      var sound = document.getElementById("prankSound");
+      const sound = document.getElementById("prankSound");
       sound.volume = 1.0;
       sound.play();
     }
   </script>
+
 </body>
 </html>
